@@ -5,7 +5,7 @@ void print(int arr[],int n)
     for(int i=0;i<n;i++)
         cout<<arr[i]<<" ";
 }
-void insertionSort(int arr[],int n)
+void SelectionSort(int arr[],int n)
 {
     int comparisons=0;
     int swaps=0; 
@@ -15,18 +15,19 @@ void insertionSort(int arr[],int n)
        {
            if(arr[j]<arr[i])
            {
-               swaps++;
+               
                int temp=arr[i];
                arr[i]=arr[j];
                arr[j]=temp;
            }
            comparisons++;
        }
+       swaps++;
     }
     print(arr,n);
     cout<<"\n";
     cout<<"comparisons"<<" "<<comparisons<<"\n";
-    cout<<"swaps"<<" "<<swaps<<"\n";
+    cout<<"swaps"<<" "<<swaps-1<<"\n";
   
 }
 int main()
@@ -42,6 +43,6 @@ int main()
         {
             cin>>arr[i];
         }
-        insertionSort(arr,n);
+        SelectionSort(arr,n);
     }
 }
